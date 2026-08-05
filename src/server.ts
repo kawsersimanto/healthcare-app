@@ -1,24 +1,13 @@
-import dotenv from "dotenv";
-import express, {
-  json,
-  urlencoded,
-  type Express,
-  type Request,
-  type Response,
-} from "express";
+import app from "./app";
 
-dotenv.config();
+const main = () => {
+  try {
+    app.listen(process.env.PORT, () => {
+      console.log(`App listening on port ${process.env.PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server: ", error);
+  }
+};
 
-const app: Express = express();
-const port = process.env.PORT;
-
-app.use(json());
-app.use(urlencoded({ extended: true }));
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+main();
