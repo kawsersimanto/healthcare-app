@@ -41,7 +41,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
     "rewriteRelativeImportExtensions": true,
     "erasableSyntaxOnly": true
   }
